@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Divadelní jeviště">
+  <rect width="1600" height="1000" fill="#13110f"/>
+  <path d="M0 0h1600v620c-238-96-500-143-786-139C508 485 237 554 0 686Z" fill="#34231f"/>
+  <path d="M0 689c286-122 569-181 849-177 272 4 523 64 751 178v310H0Z" fill="#1d1b18"/>
+  <path d="M111 787c284-82 560-122 828-116 199 4 382 34 550 89" fill="none" stroke="#d9a441" stroke-width="12" opacity=".52"/>
+  <path d="M182 842c263-62 519-92 770-87 171 3 332 25 483 65" fill="none" stroke="#d9362b" stroke-width="10" opacity=".5"/>
+  <g opacity=".84">
+    <circle cx="326" cy="184" r="76" fill="#d9a441"/>
+    <circle cx="790" cy="145" r="92" fill="#d9362b"/>
+    <circle cx="1238" cy="202" r="68" fill="#f6f1e8"/>
+  </g>
+  <g opacity=".35">
+    <path d="M326 184 92 742h240l91-530Z" fill="#d9a441"/>
+    <path d="M790 145 577 756h407L884 181Z" fill="#d9362b"/>
+    <path d="M1238 202 1058 760h295l-60-526Z" fill="#f6f1e8"/>
+  </g>
+</svg>

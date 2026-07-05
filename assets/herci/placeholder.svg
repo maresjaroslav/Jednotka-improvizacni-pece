@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Portrét herce">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1e8"/>
+      <stop offset=".58" stop-color="#d9a441"/>
+      <stop offset="1" stop-color="#d9362b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="400" cy="342" r="146" fill="#1d1b18" opacity=".9"/>
+  <path d="M158 890c31-206 123-309 242-309s211 103 242 309Z" fill="#1d1b18" opacity=".9"/>
+  <path d="M123 117h554v766H123Z" fill="none" stroke="#fffaf1" stroke-width="18" opacity=".58"/>
+  <text x="400" y="935" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#fffaf1">JIP</text>
+</svg>
