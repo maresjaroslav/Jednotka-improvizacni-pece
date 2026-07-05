@@ -590,17 +590,21 @@ h3 {
   }
 
   .hero-logo-wrap {
-    width: min(100%, 380px);
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
+    width: min(100%, 360px) !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible;
   }
 
   .hero-logo {
-    max-height: 440px;
+    width: 100%;
+    height: auto;
+    max-height: 280px;
     object-fit: contain;
   }
 
