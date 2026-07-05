@@ -740,9 +740,10 @@ h3 {
 .gallery-card {
   display: block;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.26);
   box-shadow: var(--shadow);
   transition: transform 160ms ease, border-color 160ms ease;
 }
@@ -753,9 +754,11 @@ h3 {
 }
 
 .gallery-card img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 @media (max-width: 840px) {
