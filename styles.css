@@ -608,6 +608,34 @@ h3 {
     object-fit: contain;
   }
 
+  .gallery-hero {
+    padding-top: 34px;
+    padding-bottom: 42px;
+  }
+
+  .gallery-hero-grid {
+    gap: 24px;
+  }
+
+  .gallery-logo-card {
+    width: min(100%, 360px) !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible;
+  }
+
+  .gallery-logo-card img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+  }
+
   .nav {
     width: 100%;
     gap: 16px;
