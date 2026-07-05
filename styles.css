@@ -120,16 +120,43 @@ button:focus-visible {
 }
 
 .footer-inner {
-  padding: 22px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 34px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto minmax(220px, 0.8fr);
+  align-items: start;
+  gap: 28px;
 }
 
 .footer-inner p {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.footer-title {
+  margin-bottom: 8px !important;
+  color: var(--white);
+  font-weight: 900;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.footer-links a:hover,
+.footer-meta a:hover {
+  color: var(--white);
+}
+
+.footer-meta {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  text-align: right;
 }
 
 .hero {
@@ -675,6 +702,21 @@ h3 {
 
   .contact-box {
     padding: 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .footer-meta {
+    justify-items: start;
+    text-align: left;
   }
 }
 
