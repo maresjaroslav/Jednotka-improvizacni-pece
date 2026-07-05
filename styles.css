@@ -353,11 +353,15 @@ h3 {
 
 .actor-photo {
   position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
 }
 
 .actor-photo img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  aspect-ratio: auto;
   object-fit: cover;
   background: rgba(255,255,255,0.06);
 }
