@@ -721,6 +721,11 @@ h3 {
 @media (max-width: 520px) {
   .gallery-grid-real {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-card img {
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -761,6 +766,7 @@ h3 {
   display: block;
   max-width: 100%;
   max-height: calc(100vh - 80px);
+  object-fit: contain;
   border-radius: 18px;
   box-shadow: 0 28px 60px rgba(0,0,0,0.4);
 }
@@ -830,6 +836,21 @@ h3 {
 }
 
 @media (max-width: 700px) {
+  .lightbox {
+    padding: 14px;
+  }
+
+  .lightbox-stage,
+  .lightbox-stage img {
+    max-height: calc(100vh - 96px);
+  }
+
+  .lightbox-stage img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
   .lightbox-nav {
     width: 48px;
     height: 48px;
