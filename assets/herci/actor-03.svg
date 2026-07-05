@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Portrét Vanes">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#53245a"/>
+      <stop offset="1" stop-color="#140714"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#g)"/>
+  <circle cx="450" cy="365" r="160" fill="#ef9ed1" opacity="0.22"/>
+  <path d="M250 925c40-210 140-330 200-330s160 120 200 330" fill="#d95ea7" opacity="0.18"/>
+  <circle cx="450" cy="370" r="120" fill="#fbf7fb" opacity="0.92"/>
+  <path d="M270 935c42-140 106-220 180-220s138 80 180 220" fill="#fbf7fb" opacity="0.92"/>
+  <rect x="72" y="72" width="756" height="956" fill="none" stroke="#ef9ed1" stroke-width="10" opacity="0.55"/>
+  <text x="450" y="960" text-anchor="middle" fill="#fbf7fb" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="700">Vanes</text>
+  <text x="450" y="1028" text-anchor="middle" fill="#ef9ed1" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="400">fotka 03</text>
+</svg>
