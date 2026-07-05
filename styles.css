@@ -46,6 +46,12 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+}
+
 .shell {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
@@ -100,6 +106,10 @@ a {
 }
 
 .nav a:hover {
+  color: var(--white);
+}
+
+.nav a[aria-current="page"] {
   color: var(--white);
 }
 
