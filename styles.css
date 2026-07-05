@@ -569,12 +569,39 @@ h3 {
 }
 
 @media (max-width: 620px) {
+  .shell {
+    width: min(100% - 28px, 1180px);
+  }
+
   .nav-wrap {
     min-height: auto;
-    padding: 14px 0;
+    padding: 12px 0;
     align-items: flex-start;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 28px 0 42px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  .hero-logo-wrap {
+    width: min(100%, 380px);
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .hero-logo {
+    max-height: 440px;
+    object-fit: contain;
   }
 
   .nav {
