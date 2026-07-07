@@ -127,6 +127,11 @@ button:focus-visible {
   gap: 28px;
 }
 
+.footer-inner-simple {
+  display: block;
+  text-align: center;
+}
+
 .footer-inner p {
   margin: 0;
   font-size: 0.95rem;
