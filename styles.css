@@ -336,7 +336,7 @@ h3 {
 
 .events-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
@@ -355,6 +355,30 @@ h3 {
 .event-card p:last-child {
   color: var(--text-muted);
   margin-bottom: 0;
+}
+
+.upcoming-events {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.upcoming-events li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  color: var(--text-soft);
+}
+
+.upcoming-events time {
+  color: var(--white);
+  font-weight: 800;
+}
+
+.upcoming-events span {
+  text-align: right;
 }
 
 .intro-grid {
