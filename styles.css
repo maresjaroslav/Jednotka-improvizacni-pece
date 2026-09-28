@@ -95,6 +95,7 @@ button:focus-visible {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 20px;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -111,6 +112,51 @@ button:focus-visible {
 
 .nav a[aria-current="page"] {
   color: var(--white);
+}
+
+.nav-socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 2px;
+}
+
+.nav a.nav-social-link {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--white);
+  background: rgba(255,255,255,0.05);
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.nav a.nav-social-link:hover {
+  background: rgba(217,94,167,0.2);
+  border-color: rgba(239,158,209,0.58);
+  transform: translateY(-1px);
+}
+
+.nav-social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.nav-social-link rect,
+.nav-social-link circle:not(.instagram-dot) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.nav-social-link .instagram-dot {
+  fill: currentColor;
+  stroke: none;
 }
 
 .site-footer {
@@ -710,7 +756,7 @@ h3 {
 
   .nav {
     width: 100%;
-    gap: 16px;
+    gap: 11px;
     overflow-x: auto;
     padding-bottom: 4px;
     scrollbar-width: none;
