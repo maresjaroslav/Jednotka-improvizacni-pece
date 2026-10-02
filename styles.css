@@ -433,6 +433,20 @@ h3 {
   text-align: right;
 }
 
+.upcoming-events strong,
+.upcoming-events small {
+  display: block;
+}
+
+.upcoming-events strong {
+  color: var(--white);
+}
+
+.upcoming-events small {
+  margin-top: 3px;
+  color: var(--text-muted);
+}
+
 .intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
