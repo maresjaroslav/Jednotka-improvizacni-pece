@@ -46,13 +46,12 @@
       "email": "jednotkaimprovizacnipece@gmail.com"
     }
   </script>
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="next-event-data">
     {
       "@context": "https://schema.org",
       "@type": "TheaterEvent",
-      "name": "Tajemství podzimní sklizně",
-      "description": "Na jaře jsme zaseli. Přes léto zalévali a hnojili. A teď je čas sklízet. Co všechno může vyrůst z toho, co jsme zaseli? Přijďte odhalit Tajemství podzimní sklizně. Improvizační představení, kde nikdy nevíte, co vyroste z jednoho nápadu.",
-      "startDate": "2026-10-04T19:00:00+02:00",
+      "name": "Superscene: Souboj příběhů",
+      "startDate": "2026-11-10T19:00:00+01:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
@@ -74,8 +73,7 @@
       "performer": {
         "@type": "PerformingGroup",
         "name": "Jednotka improvizační péče"
-      },
-      "url": "https://www.facebook.com/events/945553824678474/"
+      }
     }
   </script>
   <link rel="stylesheet" href="styles.css?v=20260928-1">
@@ -142,10 +140,8 @@
         <div class="events-layout">
           <article class="next-event">
             <p class="next-event-label">nejbližší vystoupení</p>
-            <h3>Tajemství podzimní sklizně</h3>
-            <p><strong>Music Lab, Opletalova 1, 602 00 Brno</strong><br><time datetime="2026-10-04T19:00:00+02:00">Neděle 4. 10. 2026 v 19:00</time></p>
-            <p class="event-description">Na jaře jsme zaseli.<br>Přes léto zalévali a hnojili.<br>A teď je čas sklízet.<br><br>Co všechno může vyrůst z toho, co jsme zaseli? Přijďte odhalit Tajemství podzimní sklizně.<br><br>Improvizační představení, kde nikdy nevíte, co vyroste z jednoho nápadu.</p>
-            <a href="https://www.facebook.com/events/945553824678474/" target="_blank" rel="noopener" class="button button-primary">Pozvánka na Facebooku</a>
+            <h3>Superscene: Souboj příběhů</h3>
+            <p><strong>Music Lab, Opletalova 1, 602 00 Brno</strong><br><time datetime="2026-11-10T19:00:00+01:00">Úterý 10. 11. 2026 v 19:00</time></p>
           </article>
 
           <div class="events-list">
@@ -153,10 +149,6 @@
               <p class="event-date">PROGRAM SEZÓNY 2026/27</p>
               <h3>Další hraní</h3>
               <ul class="upcoming-events">
-                <li>
-                  <time datetime="2026-11-10T19:00:00+01:00">10. 11. 2026 · 19:00</time>
-                  <span><strong>Superscene: Souboj příběhů</strong><small>Music Lab, Opletalova 1, Brno</small></span>
-                </li>
                 <li>
                   <time datetime="2026-12-06T19:00:00+01:00">6. 12. 2026 · 19:00</time>
                   <span><strong>Adventní detektivka</strong><small>Music Lab, Opletalova 1, Brno</small></span>
@@ -357,5 +349,72 @@
       <p>© 2026 Jednotka improvizační péče</p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const nextEvent = document.querySelector('.next-event');
+      const upcomingEvents = document.querySelector('.upcoming-events');
+      const eventData = document.querySelector('#next-event-data');
+      if (!nextEvent || !upcomingEvents) return;
+
+      const pragueDate = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Prague',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).formatToParts(new Date()).reduce((date, part) => {
+        if (part.type !== 'literal') date[part.type] = part.value;
+        return date;
+      }, {});
+      const today = `${pragueDate.year}-${pragueDate.month}-${pragueDate.day}`;
+      const currentTime = nextEvent.querySelector('time');
+
+      if (currentTime && currentTime.dateTime.slice(0, 10) >= today) return;
+
+      const futureItems = [...upcomingEvents.querySelectorAll('li')];
+      const followingEvent = futureItems.find((item) => {
+        const time = item.querySelector('time');
+        return time && time.dateTime.slice(0, 10) >= today;
+      });
+
+      futureItems.forEach((item) => {
+        if (item !== followingEvent && item.querySelector('time')?.dateTime.slice(0, 10) < today) {
+          item.remove();
+        }
+      });
+
+      if (!followingEvent) {
+        nextEvent.querySelector('h3').textContent = 'Další akci připravujeme';
+        nextEvent.querySelectorAll('p:not(.next-event-label), a').forEach((element) => element.remove());
+        eventData?.remove();
+        return;
+      }
+
+      const followingTime = followingEvent.querySelector('time');
+      const title = followingEvent.querySelector('strong')?.textContent || 'Impro show';
+      const location = followingEvent.querySelector('small')?.textContent || '';
+      nextEvent.querySelector('h3').textContent = title;
+      nextEvent.querySelectorAll('p:not(.next-event-label), a').forEach((element) => element.remove());
+
+      const details = document.createElement('p');
+      const place = document.createElement('strong');
+      place.textContent = location;
+      const time = document.createElement('time');
+      time.dateTime = followingTime.dateTime;
+      time.textContent = followingTime.textContent;
+      details.append(place, document.createElement('br'), time);
+      nextEvent.append(details);
+      followingEvent.remove();
+
+      if (eventData) {
+        const data = JSON.parse(eventData.textContent);
+        data.name = title;
+        data.startDate = followingTime.dateTime;
+        data.location = { '@type': 'Place', name: location };
+        delete data.description;
+        delete data.url;
+        eventData.textContent = JSON.stringify(data);
+      }
+    })();
+  </script>
 </body>
 </html>
